@@ -1,7 +1,7 @@
 class ProductModel {
   final int id;
   final String title;
-  final int price;
+  final double price;
   final String description;
   final String category;
   final String image;
@@ -20,17 +20,17 @@ class ProductModel {
     return ProductModel(
       id: jsonData['id'],
       title: jsonData['title'],
-      price: jsonData['price'],
+      price: jsonData['price'].toDouble(),
       description: jsonData['description'],
       category: jsonData['category'],
       image: jsonData['image'],
-      ratting: RattingModel.fromJson(jsonData['ratings']),
+      ratting: RattingModel.fromJson(jsonData['rating']),
     );
   }
 }
 
 class RattingModel {
-  final int rate;
+  final double rate;
   final int count;
 
   RattingModel(this.rate, this.count);
